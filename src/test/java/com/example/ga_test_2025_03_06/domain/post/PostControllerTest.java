@@ -45,7 +45,7 @@ class PostControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string("성공"));
 
-        // 다시 성공하는 테스트
+        // 실제 DB에 데이터가 저장되었는지 확인
         List<Post> posts = postRepository.findAll();
         assertThat(posts).hasSize(1);
         assertThat(posts.getFirst().getTitle()).isEqualTo("Test Title");
