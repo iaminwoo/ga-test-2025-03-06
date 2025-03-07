@@ -23,7 +23,7 @@ jobs:
         run: |
           envsubst < src/main/resources/application-template.yml > src/main/resources/application-secret.yml
         env:
-          BASE_URL: ${{ secrets.BASE_URL }}
+          POST_BASE_URL: ${{ secrets.BASE_URL }}
 
       - name: Build and run tests
         run: |
